@@ -1,0 +1,162 @@
+/* 1. Define Theme Color Variables */
+[data-theme="light"] {
+    --bg-color: #f4f1ea;        /* Soft warm meadow background */
+    --card-bg: #ffffff;         /* Crisp white bento cards */
+    --text-color: #1a1a1a;      /* Deep forest ink */
+    --accent-color: #2d6a4f;    /* Forest green accent */
+    --shadow-color: #1a1a1a;    /* Hard black shadow */
+}
+
+[data-theme="dark"] {
+    --bg-color: #121814;        /* Deep forest night background */
+    --card-bg: #1b2622;         /* Dark moss bento cards */
+    --text-color: #f4f1ea;      /* Soft light text */
+    --accent-color: #52b788;    /* Bright vibrant leaf green */
+    --shadow-color: #000000;    /* Pure black shadow */
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Courier New', Courier, monospace;
+    transition : background-color 0.3s ease, color 0.3s ease;
+    padding: 2rem;
+}
+
+/* 3. Portfolio Container Layout */
+.portfolio-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* 4. Core Eco-Brutalist Bento Box Style */
+.bento-box {
+    background-color: var(--card-bg);
+    border: 3px solid var(--text-color);
+    box-shadow: 5px 5px 0px var(--shadow-color); /* Hard offset shadow */
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+/* Interactive hover shift for brutalist feel */
+.bento-box:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0px var(--accent-color);
+}
+
+/* 5. Header & Navigation Card */
+header.bento-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: -1px;
+}
+
+/* 6. Brutalist Buttons */
+.btn {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: 2px solid var(--text-color);
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px var(--shadow-color);
+    transition: all 0.1s ease;
+}
+
+.btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px var(--shadow-color);
+}
+
+/* 7. Bento Grid Layout */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.hero-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.mascot {
+    font-size: 2.5rem;
+    cursor: pointer;
+    width: fit-content;
+    transition: transform 0.2s ease;
+}
+
+.mascot:hover {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Eco-Brutalist Card Styling */
+.bento-card {
+  background: #f4f1ea;
+  border: 3px solid #1a1a1a;
+  box-shadow: 5px 5px 0px #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 0px; /* Sharp brutalist corners */
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.bento-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #1a1a1a;
+}
+
+/* Metric Display Rules */
+.metric-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.metric-item {
+  background: #ffffff;
+  border: 2px solid #1a1a1a;
+  padding: 0.5rem 0.75rem;
+  font-family: 'Courier New', monospace; /* Raw, brutalist code font */
+  font-weight: bold;
+}
+
+.metric-item span {
+  color: #2d6a4f; /* Eco green accent */
+}
+
+#mascot {
+  font-size: 3rem;
+  cursor: pointer;
+  display: inline-block; /* crucial - allows transform scale and rotate to work.*/
+  user-select: none;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* hover efffect so user knows its clickable */
+#mascot:hover {
+  transform: scale(1.1);
+}
+
+/* Applys when clicked via typescript  */
+#mascot.bounce{
+    transform: scale(1.35) rotate(-10deg);
+}
+
+

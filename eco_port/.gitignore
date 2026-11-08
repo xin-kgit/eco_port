@@ -1,0 +1,13 @@
+# Dependencies & Virtual Environments
+node_modules/
+.venv/
+venv/
+ENV/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# VS Code workspace settings
+.vscode/
